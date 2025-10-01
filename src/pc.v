@@ -3,9 +3,9 @@ module pc (
     pc
 );
   input clk;
-  output [3:0] pc;
+  output [7:0] pc;
 
-  reg  [3:0] pc;
+  reg  [7:0] pc;
   wire       clk;
 
   initial begin

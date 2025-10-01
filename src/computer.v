@@ -6,7 +6,7 @@ module computer (
   output [7:0] alu_out_bus;
 
   // Internal buses
-  wire [ 3:0] pc_out_bus;
+  wire [ 7:0] pc_out_bus;
   wire [14:0] im_out_bus;
   wire [ 7:0] regA_out_bus;
   wire [ 7:0] regB_out_bus;
