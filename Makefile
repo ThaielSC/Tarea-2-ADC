@@ -24,7 +24,7 @@ build: $(OUT_DIR)
 # Target para ejecutar la simulación
 run:
 	@echo "Ejecutando simulación..."
-	vvp $(OUT_DIR)/$(OUT_FILE)
+	vvp $(OUT_DIR)/$(OUT_FILE) | less -c
 
 # Target para ver las formas de onda
 wave:
