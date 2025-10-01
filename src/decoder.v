@@ -20,7 +20,9 @@ module decoder (
     alu_op    = 4'hF;
 
     case (opcode)
+      
       // MOV
+      
       7'b0000000: begin
         load_A    = 1;
         alu_op    = 4'h9;
@@ -41,7 +43,9 @@ module decoder (
         alu_op    = 4'h9;
         mux_B_sel = 2'b10;
       end  // MOV B,Lit
+      
       // ADD
+      
       7'b0000100: begin
         load_A    = 1;
         alu_op    = 4'h0;
@@ -66,7 +70,9 @@ module decoder (
         mux_A_sel = 1;
         mux_B_sel = 2'b10;
       end  // ADD B,Lit
+      
       // SUB
+      
       7'b0001000: begin
         load_A    = 1;
         alu_op    = 4'h1;
@@ -91,7 +97,9 @@ module decoder (
         mux_A_sel = 1;
         mux_B_sel = 2'b10;
       end  // SUB B,Lit
+      
       // AND
+      
       7'b0001100: begin
         load_A    = 1;
         alu_op    = 4'h2;
@@ -116,7 +124,9 @@ module decoder (
         mux_A_sel = 1;
         mux_B_sel = 2'b10;
       end  // AND B,Lit
+      
       // OR
+      
       7'b0010000: begin
         load_A    = 1;
         alu_op    = 4'h3;
@@ -141,7 +151,9 @@ module decoder (
         mux_A_sel = 1;
         mux_B_sel = 2'b10;
       end  // OR B,Lit
+      
       // NOT
+      
       7'b0010100: begin
         load_A    = 1;
         alu_op    = 4'h5;
@@ -164,7 +176,9 @@ module decoder (
         alu_op    = 4'h5;
         mux_A_sel = 1;
       end  // NOT B,B (B<-~B)
+      
       // XOR
+      
       7'b0011000: begin
         load_A    = 1;
         alu_op    = 4'h4;
@@ -189,7 +203,9 @@ module decoder (
         mux_A_sel = 1;
         mux_B_sel = 2'b10;
       end  // XOR B,Lit
+      
       // SHL
+      
       7'b0011100: begin
         load_A    = 1;
         alu_op    = 4'h6;
@@ -210,7 +226,9 @@ module decoder (
         alu_op    = 4'h6;
         mux_A_sel = 1;
       end  // SHL B,B
+      
       // SHR
+      
       7'b0100000: begin
         load_A    = 1;
         alu_op    = 4'h7;
@@ -231,7 +249,9 @@ module decoder (
         alu_op    = 4'h7;
         mux_A_sel = 1;
       end  // SHR B,B
+      
       // INC
+      
       7'b0100100: begin
         load_B    = 1;
         alu_op    = 4'h8;
