@@ -44,4 +44,15 @@ clean:
 	@rm -f yosys.log
 	@echo "Limpieza completa."
 
-.PHONY: all build run wave synth clean
+# --- Memory Test Targets ---
+build_memory:
+	@echo "Construyendo ejecutable de prueba de memoria..."
+	iverilog -o $(OUT_DIR)/computer_memory $(VERILOG_FILES) testbench_memory.v
+
+run_memory:
+	@echo "Ejecutando simulacion de prueba de memoria..."
+	vvp $(OUT_DIR)/computer_memory
+
+test_memory: build_memory run_memory
+
+.PHONY: all build run wave synth clean test_memory build_memory run_memory
