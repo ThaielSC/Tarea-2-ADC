@@ -179,8 +179,8 @@ module test;
 
         #2; // SUB B, A
         $display("CHECK @ t=%0t: After SUB B, A -> regB = %d", $time, regB_out);
-        if (regB_out !== 8'd246) begin
-            $error("FAIL: regB expected 246 (5-15), got %d", regB_out);
+        if (regB_out !== 8'd10) begin
+            $error("FAIL: regB expected 10 (15-5), got %d", regB_out);
             sub_test_failed = 1'b1;
         end
 
@@ -193,8 +193,8 @@ module test;
 
         #2; // SUB B, 10
         $display("CHECK @ t=%0t: After SUB B, 10 -> regB = %d", $time, regB_out);
-        if (regB_out !== 8'd236) begin
-            $error("FAIL: regB expected 236 (246-10), got %d", regB_out);
+        if (regB_out !== 8'd0) begin
+            $error("FAIL: regB expected0 (10-10 = 0), got %d", regB_out);
             sub_test_failed = 1'b1;
         end
 

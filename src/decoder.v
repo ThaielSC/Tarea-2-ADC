@@ -82,9 +82,9 @@ module decoder (
       7'b0001001: begin
         load_B    = 1;
         alu_op    = 4'h1;
-        mux_A_sel = 1;
-        mux_B_sel = 2'b00;
-      end  // SUB B,A (B<-B-A)
+        mux_A_sel = 0;
+        mux_B_sel = 2'b01;
+      end  // SUB B,A (B<-A-B)
       7'b0001010: begin
         load_A    = 1;
         alu_op    = 4'h1;
