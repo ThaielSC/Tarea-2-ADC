@@ -1,7 +1,11 @@
 module computer (clk,
-                 alu_out_bus);
+                 alu_out_bus,
+                 regA_out,
+                 regB_out);
     input clk;
     output [7:0] alu_out_bus;
+    output [7:0] regA_out;
+    output [7:0] regB_out;
     
     // Internal buses
     wire [7:0] pc_out_bus;
@@ -163,5 +167,8 @@ module computer (clk,
     .C_out(carry_flag_sr),
     .V_out(overflow_flag_sr)
     );
+
+    assign regA_out = regA_out_bus;
+    assign regB_out = regB_out_bus;
     
 endmodule
